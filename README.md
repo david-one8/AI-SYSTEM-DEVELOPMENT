@@ -1,110 +1,112 @@
 # 🎬 Movie Semantic Search Engine By David Kumar Fule 221010216
 
-![Python](https://img.shields.io/badge/python-v3.9+-blue.svg)
-![Tests](https://img.shields.io/badge/tests-7%2F7%20passing-brightgreen.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Similarity Model](https://img.shields.io/badge/model-all--MiniLM--L6--v2-orange.svg)
+[![Python](https://img.shields.io/badge/python-v3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Tests](https://img.shields.io/badge/tests-7%2F7%20passing-brightgreen.svg)](Test-Results/Test-Result.png)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.txt)
+[![Model](https://img.shields.io/badge/model-all--MiniLM--L6--v2-orange.svg)](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 
-> **A powerful semantic search engine for movie plots using SentenceTransformers and cosine similarity matching.**
+> A powerful semantic search engine that understands movie plots using advanced NLP techniques.
 
-This repository contains my comprehensive solution for the AI Systems Development semantic search assignment. The system uses state-of-the-art sentence embeddings to find movies based on plot similarity rather than simple keyword matching, enabling intelligent content discovery through natural language queries.
+## 📖 Overview
 
----
+This intelligent movie search system leverages state-of-the-art sentence embeddings to find movies based on plot similarity, going beyond simple keyword matching to enable natural language queries. Built with SentenceTransformers and optimized for semantic understanding.
+
 ![Test Results](Test-Results/Test-Result.png)
 
-## 🚀 Features
+## ✨ Key Features
 
-- **🧠 Semantic Understanding**: Uses `all-MiniLM-L6-v2` transformer model for deep plot comprehension
-- **⚡ Fast Similarity Search**: Cosine similarity matching with pre-computed embeddings
-- **🔍 Flexible Queries**: Natural language search support (e.g., "romantic movie in Paris")
-- **📊 Similarity Scoring**: Returns confidence scores for result ranking
-- **🧪 Comprehensive Testing**: 7 unit tests covering functionality, edge cases, and expected behavior
-- **🛡️ Robust Error Handling**: Validates inputs, handles missing files, and provides clear error messages
-- **📈 Scalable Architecture**: Modular design supporting easy dataset expansion
-
----
+- 🧠 **Semantic Understanding**: Powered by `all-MiniLM-L6-v2` transformer model
+- ⚡ **Fast Similarity Search**: Optimized cosine similarity matching
+- 🔍 **Natural Language Queries**: Search movies using everyday language
+- 📊 **Smart Ranking**: Results sorted by semantic relevance
+- 🧪 **Reliable Testing**: Comprehensive test suite with 100% pass rate
+- 🛡️ **Error Handling**: Robust input validation and clear error messages
+- 📈 **Scalable Design**: Easy to extend with more movies or features
 
 ## 📂 Project Structure
 
+```plaintext
 movie-search-assignment/
-├── movie_search.py # Main semantic search module
-├── movies.csv # Sample movie dataset
-├── requirements.txt # Python dependencies
+├── movie_search.py        # Core search engine implementation
+├── movies.csv            # Movie dataset
+├── requirements.txt      # Project dependencies
 ├── tests/
-│ ├── init.py
-│ └── test_movie_search.py # Comprehensive unit tests
-├── screenshots/ # Demo images and results
-├── README.md # This file
-└── LICENSE # MIT License
-
-
----
-
-## ⚙️ Setup Instructions
-
-### Prerequisites
-- **Python 3.9+** ([Download here](https://www.python.org/downloads/))
-- **Git** ([Download here](https://git-scm.com/downloads))
-
+│   ├── __init__.py
+│   └── test_movie_search.py
+├── Test-Results/        # Test results and screenshots
+├── README.md
+└── LICENSE.txt
 ```
 
-### 2. Install Dependencies
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.9 or higher
+- Git (optional, for cloning)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/david-one8/AI-SYSTEM-DEVELOPMENT.git
+cd AI-SYSTEM-DEVELOPMENT
+```
+
+2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
----
+## 💻 Usage
 
-## 🧪 Testing Instructions
+Here's a quick example of how to use the search engine:
 
-### Run All Tests
+```python
+from movie_search import load_movies, search_movies
+
+# Load the movie database
+movies = load_movies('movies.csv')
+
+# Search for movies
+results = search_movies('spy thriller in Paris', top_n=3)
+print(results)
+```
+
+## 🧪 Testing
+
+Run the test suite to verify everything works correctly:
+
 ```bash
 python -m unittest -v tests.test_movie_search
 ```
 
----
-
-## 💻 Usage Examples
-
-### Basic Usage
-from movie_search import load_movies, search_movies
-
-load_movies('movies.csv')
-results = search_movies('spy thriller in Paris', top_n=3)
-print(results)
-
-
----
-
 ## 🤝 Contributing
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+Contributions are welcome! Here's how you can help:
 
-### Contribution Guidelines
-- Add unit tests for new features
-- Update documentation for API changes
-- Follow existing code style conventions
-- Ensure all tests pass before submitting
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
----
+## ✅ Technical Details
 
-## 📝 Assignment Requirements Checklist
+- Uses SentenceTransformers for semantic search
+- Implements `all-MiniLM-L6-v2` model for embeddings
+- Returns DataFrame with title, plot, and similarity scores
+- Ranks results using cosine similarity
 
-- ✅ **Semantic search implementation** using SentenceTransformers
-- ✅ **all-MiniLM-L6-v2 model** integration
-- ✅ **DataFrame output** with title, plot, similarity columns
-- ✅ **Cosine similarity** ranking algorithm
-- ✅ **Unit test suite** (7 comprehensive tests)
-- ✅ **Error handling** for edge cases
-- ✅ **Clean code architecture** with documentation
-- ✅ **GitHub repository** with proper structure
-- ✅ **README documentation** (this file)
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
 
 ---
+
+Made with ❤️ by David Kumar Fule (221010216)
 
 ## 🐛 Known Issues & Limitations
 
@@ -112,8 +114,6 @@ print(results)
 - **Large datasets** may require memory optimization
 - **Model download** happens on first run (~90MB)
 - **Case sensitivity** in exact movie title matching
-
----
 
 ## 📚 References & Documentation
 
@@ -124,27 +124,4 @@ print(results)
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE.txt) file for details.
-
----
-
-## 👨‍💻 Contact Information
-
-**Developer**: David Kumar Fule
-**Student ID**: [221010216]  
-**Collage**: IIIT Naya Raipur  
-**Course**: AI Systems Development  
-**Assignment_01**: Semantic Search Engine 
-
-
----
-
-<div align="center">
-
-**If you found this project helpful, please consider giving it a ⭐!**
-
-*Built with ❤️ for AI Systems Development @ IIIT Naya Raipur*
-
-</div>
+**Developer**: David Kumar Fule | **Student ID**: 221010216 | **Institution**: IIIT Naya Raipur
